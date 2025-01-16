@@ -1,0 +1,11 @@
+cd teccのプログラムはset temperatureは触りすぎておかしい
+cd tecchinのプログラムはreghmc_paralell_.pyが動く 300 630   360 taget=1でそれなりの温度設定になる。
+mpiexec -n 6 python reghmc_paralell_.py
+ffremtre.pyにreghmc_.pyでgbsaの実行がある。
+trem_3d.pyに3drismでの実行がある。ここはそれぞれのレプリカがどのように推移したか保存する必要があるのでrireki.txtに推移できるようにした。
+onlypotential.pyで力場レプリカ交換法がある。
+record.pyは遷移の行方とdataをそれぞれ保存
+12/9  ffremtre2.pyが確実 3d_new.py onlypotential_copy.py
+12/11 ffremtre2.py       3d_new_notrem.py これが全て並列化してある　でもtremのところが多分おかしい onlypotential_copy.py
+12/11 3d_new_notrem.py tremのところ直した　num1,num2,num3,num4が得られるがレプリカ交換アクセプトのときnum1←num4,num2←num3　onlypotential_copy.pyの交換の時にfileにエネルギーを書き込むが確認必要。
+12/13 3d_new.py copy1 copy2　消した。今の計算終わったらいらないfile消す。input_rism1d600等　reghmc_をhmcにする。いらないfile消す。名前変更
